@@ -1,10 +1,11 @@
-import balpy
 import sys
+sys.path.append('../../')
+
+import balpy
 import os
 import json
 import jstyleson
 import time
-
 import webbrowser
 
 def main():
@@ -22,7 +23,7 @@ def main():
 		pool = jstyleson.load(f)
 
 	bal = balpy.balpy.balpy(pool["network"]);
-	gasFactor = 1.05;
+	gasFactor = 1.5;
 	gasSpeed = pool["gasSpeed"];
 	gasPriceGweiOverride = pool["gasPriceOverride"];
 	if gasPriceGweiOverride == "":
@@ -51,7 +52,7 @@ def main():
 	(tokensSorted, allowancesSorted) = bal.erc20GetTargetAllowancesFromPoolData(pool);
 	initialBalancesSorted = [pool["tokens"][token]["initialBalance"] for token in tokensSorted];
 	# Async: Do [Approve]*N then [Wait]*N instead of [Approve, Wait]*N
-	bal.erc20AsyncEnforceSufficientVaultAllowances(tokensSorted, allowancesSorted, initialBalancesSorted, gasFactor, gasSpeed, gasPriceGweiOverride=gasPriceGweiOverride);
+	bal.erc20AsyncEnforceSufficientVaultAllowances(tokensSorted, allowancesSorted, initialBalancesSorted, gasFactor, gasSpeed, nonceOverride=-1, gasPriceGweiOverride=gasPriceGweiOverride);
 
 	print();
 	print("==============================================================")
@@ -60,7 +61,7 @@ def main():
 	print();
 	creationHash = None;
 	if not "poolId" in pool.keys():
-		txHash = bal.balCreatePoolInFactory(pool, gasFactor, gasSpeed, gasPriceGweiOverride=gasPriceGweiOverride);
+		txHash = bal.balCreatePoolInFactory(pool, gasFactor, gasSpeed, nonceOverride = -1, gasPriceGweiOverride=gasPriceGweiOverride);
 		if not txHash:
 			quit();
 		poolId = bal.balGetPoolIdFromHash(txHash);

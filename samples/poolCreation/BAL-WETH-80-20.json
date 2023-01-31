@@ -1,7 +1,7 @@
 {
     "network": "bsc-testnet",
     "gasSpeed": "average",
-    "gasPriceOverride": 100,
+    "gasPriceOverride": 10,
     "name": "Python Test Weighted Pool V2",
     "symbol": "PTWPv2",
     "poolType": "WeightedPool",
@@ -9,18 +9,18 @@
     "fromInternalBalance": false,
     "owner": "0xfEB47392B746dA43C28683A145237aC5EC5D554B",
     "tokens": {
-        "0x1889173c58052E880AC87C2569f508910160d1A0": {
-            "weight": "0.5",
-            "initialBalance": "0.1",
+        "0x5cA2E6A6173826e4DD0876fD853020F40362cbAE": {
+            "weight": "0.8",
+            "initialBalance": "0.",
             "rateProvider": "0x0000000000000000000000000000000000000000",
             "allowance": -1
         },
-        "0x91424584c58f5d0337c28bb93B8eEB8f9CF61E3d": {
-            "weight": "0.5",
-            "initialBalance": "0.1",
+        "0xd66c6B4F0be8CE5b39D52E0Fd1344c389929B378": {
+            "weight": "0.2",
+            "initialBalance": "0.",
             "rateProvider": "0x0000000000000000000000000000000000000000",
             "allowance": -1
         }
     },
-    "poolId": "4b72ede7f0da3da157efe5da7525b941d6518e1b000200000000000000000001"
+    "poolId": "e9ca01b370adfa8e600a6d892219432cb5f29dbc000200000000000000000003"
 }
