@@ -1,21 +1,9 @@
 {
-    /*
-    It is highly recommended that you make a copy of this file before running the script!
-    Once you run the script with a given file, these comments will disappear since to the
-    file will be saved with the poolId encoded in it. The pool generation script can handle
-    reading json files with comments in them, but it cannot recreate them.
-    */
-
-    // Network and Gas Settings
-    "network": "goerli",
-    "gasSpeed":"average", // this can be {slow, average, fast}
-    "gasPriceOverride":"120", // setting this to any number will override the gasSpeed
-
-    // Pool Name & Token Symbol
+    "network": "bsc-testnet",
+    "gasSpeed": "average",
+    "gasPriceOverride": "120",
     "name": "Python Test Managed",
     "symbol": "Managed 123",
-
-    // Pool Configuration
     "poolType": "ManagedPool",
     "swapFeePercent": "0.1",
     "managementAumFeePercentage": "50",
@@ -23,19 +11,20 @@
     "fromInternalBalance": false,
     "swapEnabledOnStart": true,
     "mustAllowlistLPs": false,
-    "owner": "0x7a73a786d16243680B3253a35392860eAE87d071",
+    "owner": "0xfEB47392B746dA43C28683A145237aC5EC5D554B",
     "tokens": {
-        "0x8c9e6c40d3402480ace624730524facc5482798c": {
+        "0x1889173c58052E880AC87C2569f508910160d1A0": {
             "weight": "0.9",
-            "initialBalance": "0.000001",
+            "initialBalance": "10",
             "allowance": -1,
-            "assetManager":"0x7a73a786d16243680B3253a35392860eAE87d071"
+            "assetManager": "0xfEB47392B746dA43C28683A145237aC5EC5D554B"
         },
-        "0xdfcea9088c8a88a76ff74892c1457c17dfeef9c1": {
+        "0x91424584c58f5d0337c28bb93B8eEB8f9CF61E3d": {
             "weight": "0.1",
-            "initialBalance": "0.000001",
+            "initialBalance": "10",
             "allowance": -1,
-            "assetManager":"0x7a73a786d16243680B3253a35392860eAE87d071"
+            "assetManager": "0xfEB47392B746dA43C28683A145237aC5EC5D554B"
         }
-    }
+    },
+    "poolId": "8f8de90cc05ff7aab66d0efeb8e9945ed8b1c458000100000000000000000006"
 }

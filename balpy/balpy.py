@@ -8,9 +8,11 @@ import requests
 import time
 import sys
 import pkgutil
+import traceback
+
 from decimal import *
 from functools import cache
-import traceback
+from dotenv import load_dotenv
 
 # low level web3
 from web3 import Web3, middleware
@@ -26,6 +28,8 @@ from multicaller import multicaller
 from . import balancerErrors as be
 from .enums.stablePoolJoinExitKind import StablePoolJoinKind, StablePhantomPoolJoinKind, StablePoolExitKind
 from .enums.weightedPoolJoinExitKind import WeightedPoolJoinKind, WeightedPoolExitKind
+
+load_dotenv();
 
 class Suppressor(object):
     def __enter__(self):
