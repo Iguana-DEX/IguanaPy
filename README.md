@@ -14,7 +14,7 @@ IguanaPy has been tested on:
 #### Install from PiP
 Local installation of the latest balpy release can be done simply using:
 ```bash
-pip install balpy
+pip install IguanaPy
 ```
 However, for reliability and isolation, we recommend creating a package through poetry
 ```bash
@@ -22,15 +22,15 @@ However, for reliability and isolation, we recommend creating a package through 
 # pip install poetry
 poetry new package-name
 cd package-name
-poetry add balpy
+poetry add IguanaPy
 ```
 See release on PyPI: https://pypi.org/project/balpy/
 
 ### Install from source
 ```bash
 # Install in virtual environment using poetry
-git clone https://github.com/balancer-labs/balpy.git
-cd balpy
+git clone https://github.com/iguana-dex/IguanaPy.git
+cd IguanaPy
 poetry install # Install dependencies and package
 # You can enter the virtual environment using
 poetry shell
@@ -41,13 +41,13 @@ poetry run ./samples/misc/vaultWethRead.py
 #### Locally building wheels
 You can also create a wheel (.whl) file to build the library for platform-specific distribution
 ```bash
-git clone https://github.com/balancer-labs/balpy.git
-cd balpy
+git clone https://github.com/iguana-dex/IguanaPy.git
+cd IguanaPy
 poetry build
 # You can find the wheels here
 cd dist/
 # Wheel name will depend on version
-pip install ./balpy-X.X.X.whl
+pip install ./IguanaPy-X.X.X.whl
 ```
 
 ### Environment Variables
